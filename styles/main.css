@@ -1,0 +1,69 @@
+:root{
+    --size: 300px;
+    --sizedoubled: 500px;
+}
+body{
+    display: grid;
+    place-content: center;
+    min-height: 80vh;
+    background-color: #2e2e2e;
+}
+.container{
+    perspective: 62.5rem;
+    width: var(--size);
+    height: var(--sizedoubled);
+}
+.cube{
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(-15deg) rotateY(15deg);
+    
+}
+.scene{
+    position: absolute;
+    border: .0625rem solid rgba(142, 142, 142, 0.68);
+    box-shadow: inset 0 0 3.75rem rgba(0, 0, 0, 0.1);
+    width: var(--size);
+    height: var(--sizedoubled);
+    text-align: center;
+    background-color: white;
+    opacity: .8;
+    overflow: hidden;
+}
+.front{
+    transform: translateZ(9.375rem);
+}
+.back{
+    transform: rotateY(180deg) translateZ(9.375rem);
+}
+.right{
+    transform: rotateY(90deg) translateZ(9.375rem);
+}
+.left{
+    transform: rotateY(-90deg) translateZ(9.375rem);
+}
+
+
+
+
+.container-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: var(--sizedoubled);
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
